@@ -9,7 +9,7 @@
     	<div class="col-md-12">
         	<div class="page">
                 <div class="row">
-                    <div class="col-lg-3">
+                    <div class="col-lg-2">
                     <!-- Side Navigation -->
                         <div class="side-nav">
                         	<h3>Knowledge Streams</h3>
@@ -55,7 +55,7 @@
                         </div>
                     </div>
                     <!-- Main Page Content -->
-                    <div class="col-md-9 mainpage">
+                    <div class="col-md-7 mainpage">
                         <div id="content" class="content">
                         <?php
              							
@@ -75,9 +75,9 @@
                                         </div>
                                         <div id="watch" class="watch">
                                             <div class="row">
-                                                <div class="col-lg-1"></div>
-                                                <div class="col-lg-10">
-                                                    <iframe src="https://www.youtube.com/watch?v='.$queryResult['url'].'" scrolling="no" height="380" width="100%" title="" class="center-block"></iframe>
+                                                <!--<div class="col-lg-1"></div>-->
+                                                <div class="col-lg-12">
+                                                    <iframe src="https://www.youtube.com/embed/'. $_GET['url'] .'" frameborder="0" allowfullscreen scrolling="no" height="385" width="100%" title="'.$queryResult['title'].'" class="center-block" alt="'.$queryResult['title'].'"></iframe>
                                                     <!-- Socila icons -->
                                                     <div class="social">
                                                         <p><span class="views">'.$count.' Views</span><span class="likebox" id="likebox">';
@@ -96,7 +96,7 @@
 														<i class="fa fa-star" style="color:'.$color.'" id="'.$loggedin.'" title="Mark as Important"></i></span></p>
                                                     </div>
                                                 </div>
-                                                <div class="col-lg-1"></div>
+                                                <!--<div class="col-lg-1"></div>-->
                                             </div>
                                         </div>
                                         ';
@@ -110,23 +110,10 @@
                             else
                              	include '../includes/default.php';
                             ?>
-                            <!--<div class="heading">
-                                <h2 align="center" id="video-title">Some Video</h2>
-                            </div>
-                            <div id="watch" class="watch">
-                                <div class="row">
-                                    <div class="col-lg-1"></div>
-                                    <div class="col-lg-10">
-                                        <iframe src="img/main.jpg" scrolling="no" height="380" width="100%" title="" class="center-block"></iframe>
-                                        <!-- Socila icons 
-                                        <div class="social">
-                                            <p><span class="views">2124 Views</span><span class="likebox"><span class="like" id="like"><i class="fa fa-thumbs-up"></i></span> 2436 <span class="unlike"><i class="fa fa-thumbs-down"></i> </span> 23 </span></p>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-1"></div>
-                                </div>
-                            </div>-->
                         </div>
+                    </div>
+                    <!-- Suggesstions -->
+                    <div class="col-lg-3">
                         <div id="suggestions">
                         	<div class="suggestions">
                             	<h3>Recommended for you</h3>
@@ -151,7 +138,7 @@
 											$entered = 1;
 											echo '
 												<div class="well alert-info btn-link">
-													<a href="watch.php?url='.$branchQueryResult['url'].'"><strong>'.$branchQueryResult['title'].'</strong> '.$branchQueryResult['views'].' </a>
+													<a href="?url='.$branchQueryResult['url'].'"><strong>'.$branchQueryResult['title'].'</strong><span class="rec-views"> '.$branchQueryResult['views'].' </span><i class="fa fa-eye"></i></a>
 												</div>                         
 											';
 										}
